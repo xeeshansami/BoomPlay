@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:id="@+id/libraryMenu"
+        android:orderInCategory="100"
+        android:title="Library"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/musicMenu"
+        android:orderInCategory="100"
+        android:title="Music"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/buzzMenu"
+        android:orderInCategory="100"
+        android:title="Buzz"
+        app:showAsAction="always" />
+</menu>

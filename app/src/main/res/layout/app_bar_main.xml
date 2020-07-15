@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:gravity="center_vertical"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center"
+            android:background="@color/colorAccent"
+            android:gravity="center_vertical|center">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:animateLayoutChanges="true"
+                android:background="@color/colorAccent"
+                android:gravity="center_vertical"
+                android:scrollIndicators="bottom"
+                android:theme="@style/Widget.BottomNavigationView"
+                app:itemRippleColor="@color/White"
+                app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+                app:itemTextAppearanceInactive="@style/BottomNavigationView"
+                app:itemTextColor="@color/White"
+                app:menu="@menu/tabs_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        app:layout_constraintBottom_toTopOf="@+id/audioPlayer"
+        />
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:id="@+id/audioPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40ssp"
+        android:background="@color/Black"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/audioPlayerImg"
+            android:layout_width="@dimen/_40ssp"
+            android:layout_height="@dimen/_40ssp"
+            android:background="@drawable/circle_img"
+            android:src="@mipmap/ic_history"></ImageView>
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_5ssp"
+            android:id="@+id/audioPlayerDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/audioPlayerImg"
+            android:orientation="vertical">
+
+            <TextView
+                android:gravity="center_vertical"
+                android:textColor="@color/White"
+                android:fontFamily="@font/imprima"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/audio"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:fontFamily="@font/imprima"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Artist"
+                android:textSize="@dimen/_10ssp"></TextView>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/audioPlayerPlayBtn"
+            android:layout_width="@dimen/_30ssp"
+            android:layout_height="@dimen/_30ssp"
+            android:layout_marginLeft="@dimen/_10ssp"
+            android:layout_toRightOf="@+id/audioPlayerDetails"
+            android:background="@drawable/circle_img"
+            android:src="@android:drawable/ic_media_play"
+            android:tint="@color/Blue"></ImageView>
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/_30ssp"
+            android:layout_height="@dimen/_30ssp"
+            android:layout_marginLeft="@dimen/_10ssp"
+            android:layout_toRightOf="@+id/audioPlayerPlayBtn"
+            android:background="@drawable/circle_img"
+            android:src="@android:drawable/ic_menu_info_details"
+            android:tint="@color/Blue"></ImageView>
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

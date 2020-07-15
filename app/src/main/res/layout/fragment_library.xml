@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:layout_constraintTop_toBottomOf="@+id/appbar"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <RelativeLayout
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/search_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:background="@drawable/edit_text_bg"
+        >
+
+        <EditText
+            android:layout_margin="@dimen/_2ssp"
+            android:fontFamily="@font/imprima"
+            android:textColorHint="@color/Gray"
+            android:drawableTint="@color/Gray"
+            android:textColor="@color/Gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/kota_the_friend"
+            android:background="@null"
+            android:gravity="center"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            />
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10ssp"
+        app:layout_constraintTop_toBottomOf="@+id/search_et"></androidx.recyclerview.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10ssp"
+        android:paddingTop="@dimen/_30ssp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView">
+
+        <LinearLayout
+            android:id="@+id/playList_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10ssp"
+                android:fontFamily="@font/imprima"
+                android:text="Recently Played"
+                android:textColor="@color/White"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10ssp"
+                android:fontFamily="@font/imprima"
+                android:text="Most Player"
+                android:textColor="@color/White"></TextView>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/playList_layout"
+            android:layout_marginLeft="@dimen/_10ssp"
+            android:paddingTop="@dimen/_10ssp">
+
+            <ImageView
+                android:id="@+id/lastPlayImg"
+                android:layout_width="@dimen/_50ssp"
+                android:layout_height="@dimen/_50ssp"
+                android:layout_margin="@dimen/_2ssp"
+                android:background="@color/LightGrey"></ImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10ssp"
+                android:layout_toRightOf="@+id/lastPlayImg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/imprima"
+                    android:text="Last Played"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/_15ssp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/imprima"
+                    android:text="0 Song"
+                    android:textColor="@color/White"></TextView>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>
