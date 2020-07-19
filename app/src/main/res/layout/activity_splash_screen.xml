@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash"
+    android:background="@drawable/black_them"
     >
 
     <TextView
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="@font/imprima"
+        android:textColor="@color/White"
         android:gravity="center"
         android:text="@string/app_name"
         android:textStyle="bold"
+        android:textSize="@dimen/_30ssp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

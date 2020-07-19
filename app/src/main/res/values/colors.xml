@@ -4,8 +4,13 @@
     <color name="colorPrimaryDark">#00154C</color>
     <color name="colorAccent">#202020</color>
     <color name="edittextBg">#C8373737</color>
+    <color name="btnBg">#524C53</color>
     <color name="colorDrawerBg">#00154C</color>
     <color name="White">#FFFFFF</color>
+    <color name="twitterColor">#1DA0F0</color>
+    <color name="facebookColor">#4267B2</color>
+    <color name="googleColor">#4267B2</color>
+    <color name="transparentColor">#00000000</color>
     <color name="Ivory">#FFFFF0</color>
     <color name="LightYellow">#FFFFE0</color>
     <color name="Yellow">#FFFF00</color>
@@ -36,6 +41,7 @@
     <color name="Fuchsia">#FF00FF</color>
     <color name="Magenta">#FF00FF</color>
     <color name="Red">#FF0000</color>
+    <color name="LightRed">#F37272</color>
     <color name="OldLace">#FDF5E6</color>
     <color name="LightGoldenrodYellow">#FAFAD2</color>
     <color name="Linen">#FAF0E6</color>
@@ -145,5 +151,7 @@
     <color name="DarkBlue">#00008B</color>
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
+    <color name="et_lines">#85878E</color>
+    <color name="lightGray">#D0D0D1</color>
 
 </resources>

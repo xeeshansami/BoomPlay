@@ -17,18 +17,38 @@
         <item name="android:textSize">10sp</item>
     </style>
 
-    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
-        <item name="android:textSize">25sp</item>
-    </style>
+
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">25sp</item>
+        <item name="itemTextColor">@color/Red</item>
+    </style>
+
+    <style name="BottomNavigationView2.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">18sp</item>
+
+    </style>
+
     <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
         <item name="fontFamily">@font/imprima</item>
+        <item name="background">@color/transparentColor</item>
+        <item name="itemBackground">@color/transparentColor</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:state_active">true</item>
+        <item name="itemTextAppearanceActive">@color/et_lines</item>
+        <item name="android:itemBackground">@drawable/login_btn_bg</item>
     </style>
     <style name="TextAppearance.MaterialComponents.Caption" parent="TextAppearance.AppCompat.Menu">
         <item name="fontFamily">@font/imprima</item>
+    </style>
+    <style name="BottomNavThem" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="itemTextAppearanceActive">@color/colorAccent</item>
+        <item name="itemTextAppearanceInactive">@color/colorAccent</item>
     </style>
 </resources>

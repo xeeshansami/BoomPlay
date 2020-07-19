@@ -1,17 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
-   >
-    <androidx.recyclerview.widget.RecyclerView
-        android:scrollbars="vertical"
-        android:scrollbarThumbVertical="@android:color/darker_gray"
-        android:scrollbarSize="1dp"
-        android:id="@+id/status_rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </androidx.recyclerview.widget.RecyclerView>
+    android:background="@drawable/black_them"
+    app:layout_constraintTop_toBottomOf="@+id/appbar">
 
-</FrameLayout>
+    <LinearLayout
+        android:backgroundTint="@color/White"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="3dp"
+        android:background="@drawable/edit_text_bg"
+        android:gravity="center"
+        android:weightSum="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ConcernedPortionofScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:orientation="vertical">
+
+            <!-- Parent FrameLayout 'FL' -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/half_image">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="25dp"
+                    android:background="@drawable/half_image" />
+
+                <!-- BL = 50dp -->
+            </FrameLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/_20ssp"
+                android:layout_marginRight="@dimen/_20ssp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/edit_text_bg"
+                >
+
+                <EditText
+                    android:layout_margin="@dimen/_2ssp"
+                    android:fontFamily="@font/imprima"
+                    android:textColorHint="@color/Gray"
+                    android:drawableTint="@color/Gray"
+                    android:textColor="@color/Gray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/kota_the_friend"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:drawableLeft="@android:drawable/ic_menu_search"
+                    />
+            </RelativeLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_2ssp"
+                            android:fontFamily="@font/imprima"
+                            android:text="@string/topPicksStr"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/_15ssp"
+                            android:textStyle="bold"></TextView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2ssp"
+                            android:orientation="horizontal"></androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_2ssp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_2ssp"
+                            android:fontFamily="@font/imprima"
+                            android:text="@string/recentlyPlayedStr"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/_15ssp"
+                            android:textStyle="bold"></TextView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2ssp"
+                            android:orientation="horizontal"></androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_2ssp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_2ssp"
+                            android:fontFamily="@font/imprima"
+                            android:text="@string/trendingSongsStr"
+                            android:textColor="@color/White"
+                            android:textSize="@dimen/_18ssp"
+                            android:textStyle="bold"></TextView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_2ssp"></androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

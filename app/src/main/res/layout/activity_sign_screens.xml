@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/black_them">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/bottomNavTabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20ssp"
+        android:layout_marginLeft="@dimen/_20ssp"
+        android:layout_marginRight="@dimen/_40ssp"
+        android:animateLayoutChanges="true"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:scrollIndicators="bottom"
+        android:theme="@style/Widget.BottomNavigationView"
+        app:itemRippleColor="@color/White"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView2.Active"
+        app:itemTextColor="@color/White"
+        app:menu="@menu/sign_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toTopOf="@+id/audioPlayer"
+        app:layout_constraintTop_toBottomOf="@+id/bottomNavTabs" />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

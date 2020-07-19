@@ -10,6 +10,7 @@ import android.os.Handler
 import android.widget.Toast
 import com.example.boomplay.Dashboard
 import com.example.boomplay.R
+import com.example.boomplay.SignActivity
 import com.nabinbhandari.android.permissions.PermissionHandler
 import com.nabinbhandari.android.permissions.Permissions
 import java.util.*
@@ -54,7 +55,7 @@ class SplashScreen : Activity() {
 
     fun sendToDashboard() {
         Handler().postDelayed({
-            startActivity(Intent(this, Dashboard::class.java))
+            startActivity(Intent(this, SignActivity::class.java))
             finish()
         }, 2000)
 

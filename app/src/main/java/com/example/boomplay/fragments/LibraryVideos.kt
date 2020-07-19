@@ -1,33 +1,34 @@
 package com.paxees.wastatussaver.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.boomplay.Dashboard
+import com.example.boomplay.PlayActivity
 import com.example.boomplay.R
 import com.paxees.wastatussaver.Adapter.RecyclerViewAdapter
 import com.paxees.wastatussaver.Adapter.RecyclerViewAdapter2
-import com.paxees.wastatussaver.Adapter.RecyclerViewAdapter3
-import com.paxees.wastatussaver.Adapter.RecyclerViewAdapter4
 import kotlinx.android.synthetic.main.fragment_library.*
+import kotlinx.android.synthetic.main.fragment_library.recyclerView
 import kotlinx.android.synthetic.main.fragment_music.*
 import kotlinx.android.synthetic.main.fragment_videos.*
-import kotlinx.android.synthetic.main.fragment_videos.recyclerView
 import kotlinx.android.synthetic.main.fragment_videos.recyclerView2
 
 
-class MusicFragment : Fragment() {
-    val listString = ArrayList<String>()
-    val listSquareString = ArrayList<Int>()
-    val listImg = ArrayList<Int>()
+class LibraryVideos : Fragment() ,View.OnClickListener{
+    val listString= ArrayList<String>()
+    val listSquareString= ArrayList<Int>()
+    val listImg= ArrayList<Int>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -35,7 +36,7 @@ class MusicFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_music, container, false)
+        return inflater.inflate(R.layout.fragment_videos, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -81,21 +82,26 @@ class MusicFragment : Fragment() {
 
     @SuppressLint("WrongConstant")
     fun init() {
-        val layoutManager = LinearLayoutManager(activity, LinearLayout.HORIZONTAL, false)
+        watchVideoBtn.setOnClickListener(this)
+        val layoutManager = LinearLayoutManager(activity,LinearLayout.HORIZONTAL,false)
         recyclerView.setLayoutManager(layoutManager)
-        var adapter = RecyclerViewAdapter2(listSquareString, listString, (activity as Dashboard))
+        var adapter = RecyclerViewAdapter(listImg, listString, (activity as Dashboard))
         recyclerView.setAdapter(adapter)
         adapter.notifyDataSetChanged()
-        val layoutManager2 = LinearLayoutManager(activity, LinearLayout.HORIZONTAL, false)
+        val layoutManager2 = LinearLayoutManager(activity,LinearLayout.HORIZONTAL,false)
         recyclerView2.setLayoutManager(layoutManager2)
-        var adapter2 = RecyclerViewAdapter4(listSquareString, listString, (activity as Dashboard))
+        var adapter2 = RecyclerViewAdapter2(listSquareString, listString, (activity as Dashboard))
         recyclerView2.setAdapter(adapter2)
         adapter2.notifyDataSetChanged()
-        val layoutManager3 = LinearLayoutManager(activity, LinearLayout.HORIZONTAL, false)
-        recyclerView3.setLayoutManager(layoutManager3)
-        var adapter3 = RecyclerViewAdapter3(listSquareString, listString, (activity as Dashboard))
-        recyclerView3.setAdapter(adapter3)
-        adapter3.notifyDataSetChanged()
 
+    }
+
+    override fun onClick(p0: View?) {
+        when(p0?.id){
+            R.id.watchVideoBtn->{
+                var Intent=Intent(activity,PlayActivity::class.java)
+                startActivity(Intent)
+            }
+        }
     }
 }

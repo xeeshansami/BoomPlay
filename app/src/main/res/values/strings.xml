@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BoomPlay</string>
+    <string name="app_name">Zvue</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -12,6 +12,32 @@
     <string name="menu_slideshow">Transfer Coins</string>
 
     <string name="home_second">Home Second</string>
-    <string name="kota_the_friend">Kota the friends</string>
+    <string name="kota_the_friend">Search Songs</string>
     <string name="audio">Audio-000Zeshana-0x</string>
+    <string name="name">N1+91</string>
+    <string name="password">Password</string>
+    <string name="loginBtnStr">Login</string>
+    <string name="forgetTxtStr">Forget Password?</string>
+    <string name="facebookStr">Continue with facebook</string>
+    <string name="gmailStr">Continue with Google</string>
+    <string name="twitterStr">Continue with Twitter</string>
+    <string name="emailStr">Email</string>
+    <string name="mobileStr">Mobile No</string>
+    <string name="signUpStr">"Sign Up "</string>
+    <string name="watchNowStr">Watch now</string>
+    <string name="preview">Preview</string>
+    <string name="myList">My List</string>
+    <string name="homeStr">Home</string>
+    <string name="sigUpNameStr">Name</string>
+    <string name="BlackMirrorStr">Black Mirror</string>
+    <string name="shareStr">Share</string>
+    <string name="downloadStr">Download</string>
+    <string name="moreLikeThisStr">More Like This</string>
+    <string name="descStr">Hello Kunal Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.</string>
+    <string name="topPicksStr">Top Picks</string>
+    <string name="recentlyPlayedStr">Recently Played</string>
+    <string name="trendingSongsStr">Trending Songs</string>
+    <string name="videosStr">Videos</string>
+    <string name="musicStr">Music</string>
+    <string name="nothingInDownloadsStr">Nothing In Downloads</string>
 </resources>

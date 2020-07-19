@@ -10,13 +10,12 @@ import com.bumptech.glide.Glide
 import com.example.boomplay.Dashboard
 import com.example.boomplay.R
 import com.paxees.wastatussaver.Models.StatusData
-import kotlinx.android.synthetic.main.adatper_listview_circle.view.*
-import kotlinx.android.synthetic.main.library_listview_circle.view.*
+import kotlinx.android.synthetic.main.library_listview_square.view.*
 import java.io.File
 
-class RecyclerViewAdapter(listImg:ArrayList<Int>?, items: ArrayList<String>?, val context: Context
+class RecyclerViewAdapter3(listImg:ArrayList<Int>?, items: ArrayList<String>?, val context: Context
 ) :
-    RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+    RecyclerView.Adapter<RecyclerViewAdapter3.ViewHolder>() {
     var listString: ArrayList<String>? = null
     var listImg: ArrayList<Int>? = null
 
@@ -32,7 +31,7 @@ class RecyclerViewAdapter(listImg:ArrayList<Int>?, items: ArrayList<String>?, va
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             LayoutInflater.from(context).inflate(
-                R.layout.library_listview_circle,
+                R.layout.library_listview_large_item,
                 parent,
                 false
             )

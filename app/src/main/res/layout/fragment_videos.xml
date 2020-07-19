@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/black_them"
+    app:layout_constraintTop_toBottomOf="@+id/appbar">
+
+    <LinearLayout
+        android:weightSum="1"
+        android:id="@+id/search_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="3dp"
+        android:background="@drawable/edit_text_bg"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ConcernedPortionofScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/black_them"
+            android:layout_weight="0.4"
+            android:orientation="vertical">
+
+            <!-- Parent FrameLayout 'FL' -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="25dp"
+                    android:background="@drawable/half_image" />
+
+                <!-- BL = 50dp -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom|right"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="@dimen/_30ssp"
+                        android:layout_height="@dimen/_30ssp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/_20ssp"
+                        android:background="@drawable/circle_img_filled_bg"
+                        android:src="@android:drawable/ic_menu_info_details"
+                        android:tint="@color/White"></de.hdodenhof.circleimageview.CircleImageView>
+
+                    <Button
+                        android:id="@+id/watchVideoBtn"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/framelayout_button_bg"
+                        android:drawableRight="@android:drawable/ic_media_next"
+                        android:fontFamily="@font/imprima"
+                        android:padding="@dimen/_10ssp"
+                        android:text="@string/watchNowStr"
+                        android:textColor="@color/White"></Button>
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginLeft="@dimen/_2ssp"
+                    android:fontFamily="@font/imprima"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/White"
+                    android:text="@string/preview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/_2ssp"
+                    tools:listitem="@layout/adatper_listview_circle"
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginLeft="@dimen/_2ssp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginLeft="@dimen/_2ssp"
+                    android:fontFamily="@font/imprima"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/White"
+                    android:text="@string/myList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/_2ssp"
+                    tools:listitem="@layout/adatper_listview_circle"
+                    android:id="@+id/recyclerView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

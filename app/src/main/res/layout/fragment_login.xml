@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparentColor">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_20ssp"
+        android:layout_marginRight="@dimen/_20ssp"
+        android:background="@color/transparentColor"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/nameET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:background="@drawable/edit_text_line_bg"
+            android:fontFamily="@font/imprima"
+            android:hint="@string/name"
+            android:paddingLeft="@dimen/_5ssp"
+            android:textColor="@color/et_lines"
+            android:textColorHint="@color/et_lines"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></EditText>
+
+        <EditText
+            android:id="@+id/passwordET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:background="@drawable/edit_text_line_bg"
+            android:fontFamily="@font/imprima"
+            android:hint="@string/password"
+            android:paddingLeft="@dimen/_5ssp"
+            android:password="true"
+            android:textColor="@color/et_lines"
+            android:textColorHint="@color/et_lines"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameET"></EditText>
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:background="@drawable/login_btn_bg"
+            android:fontFamily="@font/imprima"
+            android:text="@string/loginBtnStr"
+            android:textColor="@color/White"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordET"></Button>
+
+        <TextView
+            android:id="@+id/forgetPasswordTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/forgetTxtStr"
+            android:textColor="@color/White"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginBtn"></TextView>
+
+        <LinearLayout
+            android:id="@+id/OrViewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50ssp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgetPasswordTxt">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginLeft="@dimen/_10ssp"
+                android:layout_weight="2"
+                android:background="@drawable/bottom_line"
+                android:backgroundTint="@color/White"></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/imprima"
+                android:gravity="center"
+                android:text="Or"
+                android:textColor="@color/White"></TextView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginRight="@dimen/_10ssp"
+                android:layout_weight="2"
+                android:background="@drawable/bottom_line"
+                android:backgroundTint="@color/White"></View>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/OrViewLayout">
+
+            <Button
+                android:id="@+id/facebooktBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/facebookColor"
+                android:fontFamily="@font/imprima"
+                android:text="@string/facebookStr"
+                android:textColor="@color/White"></Button>
+
+            <Button
+                android:id="@+id/twitterBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/twitterColor"
+                android:fontFamily="@font/imprima"
+                android:text="@string/twitterStr"
+                android:textColor="@color/White" />
+
+            <Button
+                android:id="@+id/gmailBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/Red"
+                android:fontFamily="@font/imprima"
+                android:text="@string/gmailStr"
+                android:textColor="@color/White"></Button>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
