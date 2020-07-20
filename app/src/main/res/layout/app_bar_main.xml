@@ -58,35 +58,24 @@
         android:gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
-            android:id="@+id/audioPlayerImg"
-            android:layout_width="wrap_content"
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavTabsDashboard"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_margin="@dimen/_2ssp"
-            android:background="@drawable/dashboard_home_button_bg"
-            android:drawableLeft="@drawable/ic_home_white_24dp"
+            android:animateLayoutChanges="true"
+            android:background="@color/Red"
+            android:fitsSystemWindows="true"
+            android:gravity="center_vertical"
             android:padding="@dimen/_2ssp"
-            android:src="@mipmap/ic_history"
-            android:text="@string/homeStr"
-            android:textColor="@color/White"></Button>
+            android:scrollIndicators="bottom"
+            android:theme="@style/BottomNavThem"
+            app:itemBackground="@drawable/bottom_nav_clicks"
+            app:itemIconTint="@color/White"
+            app:itemTextColor="@color/White"
+            app:labelVisibilityMode="selected"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/downloads_fragment_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
-        <ImageView
-            android:layout_width="@dimen/_30ssp"
-            android:layout_height="@dimen/_30ssp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_file_download_black_24dp"
-            ></ImageView>
-
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_width="@dimen/_30ssp"
-            android:layout_height="@dimen/_30ssp"
-            android:layout_alignParentRight="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_person_black_24dp"
-            ></ImageView>
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

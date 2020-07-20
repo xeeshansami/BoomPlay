@@ -1,5 +1,6 @@
 package com.example.boomplay
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.FrameLayout
@@ -8,14 +9,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import com.example.boomplay.Activities.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.paxees.wastatussaver.Adapter.ViewPagerAdapter
+import com.paxees.wastatussaver.fragments.DownloadFragment
 import com.paxees.wastatussaver.fragments.LibraryVideos
 import com.paxees.wastatussaver.fragments.MusicFragment
+import com.paxees.wastatussaver.fragments.PlayingNowFragment
+import kotlinx.android.synthetic.main.activity_sign_screens.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.app_bar_main.view_pager
 
 
 class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -84,6 +90,21 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
                 }
                 false
             })
+        bottomNavTabsDashboard.setOnNavigationItemSelectedListener(
+            BottomNavigationView.OnNavigationItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.homeMenu -> {
+
+                    }
+                    R.id.downloadMenu -> {
+                        var Intent = Intent(this, PlayActivity::class.java)
+                        startActivity(Intent)
+                    }
+                    R.id.personMenu -> {
+                    }
+                }
+                false
+            })
         adjustGravity(tabs)
         adjustWidth(tabs)
     }
@@ -143,7 +164,28 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.memberShipMenu -> {
+                var Intent = Intent(this, MemberShipActivity::class.java)
+                startActivity(Intent)
+            }
+            R.id.videoSettingMenu -> {
+                var Intent = Intent(this, VideoSetting::class.java)
+                startActivity(Intent)
+            }
+            R.id.appSettingMenu -> {
+                var Intent = Intent(this, SettingActivity::class.java)
+                startActivity(Intent)
+            }
+            R.id.privacyPolicyMenuID -> {
+                var Intent = Intent(this, PrivacyPolicyActivity::class.java)
+                startActivity(Intent)
+            }
+            R.id.termsOfUserMenuID -> {
+                var Intent = Intent(this, TermOfUseActivity::class.java)
+                startActivity(Intent)
+            }
+        }
         return true
     }
-
 }

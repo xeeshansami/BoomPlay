@@ -10,19 +10,22 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.boomplay.Activities.ListActivity
 import com.example.boomplay.Dashboard
 import com.example.boomplay.PlayActivity
 import com.example.boomplay.R
 import com.paxees.wastatussaver.Adapter.RecyclerViewAdapter
 import com.paxees.wastatussaver.Adapter.RecyclerViewAdapter2
+import com.paxees.wastatussaver.Adapter.RecyclerViewAdapter3
 import kotlinx.android.synthetic.main.fragment_library.*
 import kotlinx.android.synthetic.main.fragment_library.recyclerView
 import kotlinx.android.synthetic.main.fragment_music.*
+import kotlinx.android.synthetic.main.fragment_mylist.*
 import kotlinx.android.synthetic.main.fragment_videos.*
 import kotlinx.android.synthetic.main.fragment_videos.recyclerView2
 
 
-class LibraryVideos : Fragment() ,View.OnClickListener{
+class MyListFragment : Fragment() ,View.OnClickListener{
     val listString= ArrayList<String>()
     val listSquareString= ArrayList<Int>()
     val listImg= ArrayList<Int>()
@@ -36,7 +39,7 @@ class LibraryVideos : Fragment() ,View.OnClickListener{
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_videos, container, false)
+        return inflater.inflate(R.layout.fragment_mylist, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -82,25 +85,19 @@ class LibraryVideos : Fragment() ,View.OnClickListener{
 
     @SuppressLint("WrongConstant")
     fun init() {
-        watchVideoBtn.setOnClickListener(this)
-        val layoutManager = LinearLayoutManager(activity,LinearLayout.HORIZONTAL,false)
+        backNavBtn.setOnClickListener(this)
+        val layoutManager = GridLayoutManager(activity,3)
         recyclerView.setLayoutManager(layoutManager)
-        var adapter = RecyclerViewAdapter(listImg, listString, (activity as Dashboard))
+        var adapter = RecyclerViewAdapter3(listSquareString, listString, (activity as ListActivity))
         recyclerView.setAdapter(adapter)
         adapter.notifyDataSetChanged()
-        val layoutManager2 = LinearLayoutManager(activity,LinearLayout.HORIZONTAL,false)
-        recyclerView2.setLayoutManager(layoutManager2)
-        var adapter2 = RecyclerViewAdapter2(listSquareString, listString, (activity as Dashboard))
-        recyclerView2.setAdapter(adapter2)
-        adapter2.notifyDataSetChanged()
 
     }
 
     override fun onClick(p0: View?) {
         when(p0?.id){
-            R.id.watchVideoBtn->{
-                var Intent=Intent(activity,PlayActivity::class.java)
-                startActivity(Intent)
+            R.id.backNavBtn->{
+            activity?.finish()
             }
         }
     }

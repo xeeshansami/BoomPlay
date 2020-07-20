@@ -5,18 +5,22 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/memberShipMenu"
             app:showAsAction="always"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@android:drawable/ic_menu_info_details"
             android:iconTint="@android:color/white"
-            android:title="@string/menu_home" />
+            android:title="@string/membershipStr" />
         <item
-            android:icon="@drawable/ic_menu_gallery"
+            android:visible="false"
+            android:id="@+id/helpMenu"
+            android:icon="@android:drawable/ic_menu_info_details"
             android:iconTint="@android:color/white"
-            android:title="@string/menu_gallery" />
+            android:title="@string/helpStr" />
         <item
-            android:icon="@drawable/ic_menu_slideshow"
+            android:id="@+id/appSettingMenu"
+            android:icon="@android:drawable/ic_menu_info_details"
             android:iconTint="@android:color/white"
-            android:title="@string/menu_slideshow" />
+            android:title="@string/appSettingStr" />
     </group>
     <group android:checkableBehavior="all">
         <item
@@ -25,14 +29,16 @@
     </group>
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/videoSettingMenu"
             app:showAsAction="always"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@mipmap/ic_scanner"
             android:iconTint="@android:color/white"
-            android:title="@string/menu_home" />
+            android:title="@string/videoSettingStr" />
         <item
-            android:icon="@drawable/ic_menu_gallery"
+            android:id="@+id/privacyPolicyMenuID"
+            android:icon="@mipmap/ic_scanner"
             android:iconTint="@android:color/white"
-            android:title="@string/menu_gallery" />
+            android:title="@string/privacyPolicyStr" />
     </group>
     <group android:checkableBehavior="single">
         <item
@@ -41,14 +47,15 @@
     </group>
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/termsOfUserMenuID"
             app:showAsAction="always"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@mipmap/ic_scanner"
             android:iconTint="@android:color/white"
-            android:title="@string/menu_home" />
+            android:title="@string/termsOfUseStr" />
         <item
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@mipmap/ic_scanner"
             android:iconTint="@android:color/white"
-            android:title="@string/menu_gallery" />
+            android:title="@string/helpStr" />
 
     </group>
 </menu>

@@ -17,6 +17,7 @@ class PlayActivity : AppCompatActivity() {
     var prevMenuItem: MenuItem? = null
     var downloadFragment: DownloadFragment? = null
     var playingNowFragment: PlayingNowFragment? = null
+    var settingFragment: SettingFragment? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_playing_now)
@@ -54,7 +55,7 @@ class PlayActivity : AppCompatActivity() {
                         view_pager.setCurrentItem(0)
                     }
                     R.id.downloadMenu -> view_pager.setCurrentItem(1)
-                    R.id.personMenu -> finish()
+                    R.id.personMenu -> view_pager.setCurrentItem(2)
                 }
                 false
             })
@@ -62,47 +63,16 @@ class PlayActivity : AppCompatActivity() {
 //        adjustWidth(bottomNavTabs)
     }
 
-    private fun adjustGravity(v: View) {
-        if (v.id == R.id.smallLabel) {
-            val parent = v.parent as ViewGroup
-            parent.setPadding(0, 0, 0, 0)
 
-            val params = parent.layoutParams as FrameLayout.LayoutParams
-            params.gravity = Gravity.CENTER
-            parent.layoutParams = params
-        }
-
-        if (v is ViewGroup) {
-            val vg = v as ViewGroup
-
-            for (i in 0 until vg.childCount) {
-                adjustGravity(vg.getChildAt(i))
-            }
-        }
-    }
-
-    private fun adjustWidth(nav: BottomNavigationView) {
-        try {
-            val menuViewField = nav.javaClass.getDeclaredField("mMenuView")
-            menuViewField.isAccessible = true
-            val menuView = menuViewField.get(nav)
-
-            val itemWidth = menuView.javaClass.getDeclaredField("mActiveItemMaxWidth")
-            itemWidth.isAccessible = true
-            itemWidth.setInt(menuView, Integer.MAX_VALUE)
-        } catch (e: NoSuchFieldException) {
-            // TODO
-        } catch (e: IllegalAccessException) {
-            // TODO
-        }
-    }
 
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         playingNowFragment = PlayingNowFragment()
         downloadFragment = DownloadFragment()
+        settingFragment = SettingFragment()
         adapter.addFrag(playingNowFragment!!)
         adapter.addFrag(downloadFragment!!)
+        adapter.addFrag(settingFragment!!)
         viewPager.adapter = adapter
     }
 

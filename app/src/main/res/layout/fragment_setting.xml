@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White">
+
+    <RelativeLayout
+        android:id="@+id/settingMainlayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="@dimen/_20ssp"
+        android:background="@drawable/setting_top_bg">
+
+        <TextView
+            android:id="@+id/headerTxtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_scanner"
+            android:drawableTint="@color/White"
+            android:fontFamily="@font/imprima"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/_5ssp"
+            android:text="@string/tellYourFreindStr"
+            android:textColor="@color/White"
+            android:textSize="@dimen/_15ssp"></TextView>
+
+
+        <LinearLayout
+            android:id="@+id/settingEditTextLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerTxtView"
+            android:layout_margin="@dimen/_5ssp"
+            android:background="@drawable/login_btn_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <EditText
+                android:paddingLeft="@dimen/_5ssp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:singleLine="true"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/imprima"
+                android:maxLines="1"
+                android:text="@string/descStr"
+                android:textColor="@color/White"></EditText>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_2ssp"
+                android:layout_weight="1"
+                android:background="@color/White"
+                android:fontFamily="@font/imprima"
+                android:text="@string/copyLinkStr"
+                android:textColor="@color/Black"></Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/settingEditTextLayout"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableTop="@mipmap/ic_whatsapp"
+                android:text="@string/whatsappStr"
+                android:textColor="@color/White"></Button>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10ssp"
+                android:layout_marginTop="@dimen/_2ssp"
+                android:layout_marginBottom="@dimen/_2ssp"
+                android:background="@drawable/verticle_line"
+                android:backgroundTint="@color/White"></View>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableTop="@mipmap/ic_facebook"
+                android:text="@string/fbStr"
+                android:textColor="@color/White"></Button>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10ssp"
+                android:layout_marginTop="@dimen/_2ssp"
+                android:layout_marginBottom="@dimen/_2ssp"
+                android:background="@drawable/verticle_line"
+                android:backgroundTint="@color/White"></View>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableTop="@mipmap/ic_other"
+                android:text="@string/otherStr"
+                android:textColor="@color/White"></Button>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settingMainlayout">
+
+        <TextView
+            android:id="@+id/myListID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/myList"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"></TextView>
+
+        <View
+            android:id="@+id/lineSeparatorID"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_below="@+id/myListID"
+            android:layout_marginBottom="@dimen/_2ssp"
+            android:background="@drawable/bottom_line"
+            android:backgroundTint="@color/Gray"></View>
+
+        <TextView
+            android:id="@+id/settingID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lineSeparatorID"
+            android:layout_margin="@dimen/_5ssp"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/appSettingStr"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/_15ssp"></TextView>
+
+        <TextView
+            android:id="@+id/accountID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/settingID"
+            android:layout_margin="@dimen/_5ssp"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/accountStr"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/_15ssp" />
+
+        <TextView
+            android:id="@+id/helpID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accountID"
+            android:layout_margin="@dimen/_5ssp"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/helpStr"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/_15ssp"></TextView>
+
+        <TextView
+            android:id="@+id/signOutID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/helpID"
+            android:layout_margin="@dimen/_5ssp"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/signOutStr"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/_15ssp"></TextView>
+    </RelativeLayout>
+
+</RelativeLayout>

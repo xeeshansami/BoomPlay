@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.MemberShipActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center"
+            android:background="@color/Gray"
+            android:gravity="center_vertical|center"></androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbar"
+        android:layout_margin="@dimen/_5ssp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/demoEmailStr"
+            android:textColor="@color/Gray"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/demoPasswordStr"
+            android:textColor="@color/Gray"></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/bottom_line"></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:drawableTint="@color/Gray"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/changeEmailStr"
+            android:textColor="@color/Gray"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/bottom_line"></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:drawableTint="@color/Gray"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/changePwdStr"
+            android:textColor="@color/Gray"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/bottom_line"></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:drawableTint="@color/Gray"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/changeNumStr"
+            android:textColor="@color/Gray"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/bottom_line"></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:drawableTint="@color/Gray"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/visaStr"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/bottom_line"></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:drawableTint="@color/Gray"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/updatePayInfoStr"
+            android:textColor="@color/Gray"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/bottom_line"></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:drawableTint="@color/Gray"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/billingStr"
+            android:textColor="@color/Gray"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@drawable/bottom_line"></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5ssp"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:drawableTint="@color/Gray"
+            android:fontFamily="@font/imprima"
+            android:gravity="left"
+            android:text="@string/promoStr"
+            android:textColor="@color/Gray"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"></TextView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_btn_bg"
+            android:drawableTint="@color/lightGray"
+            android:fontFamily="@font/imprima"
+            android:text="@string/membershipBtnStr"
+            android:textAllCaps="false"
+            android:textColor="@color/White"></Button>
+    </LinearLayout>
+</RelativeLayout>

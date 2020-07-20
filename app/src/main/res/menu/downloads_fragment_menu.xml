@@ -17,9 +17,9 @@
         app:showAsAction="always" />
     <item
         android:iconTint="@color/White"
-        android:icon="@drawable/ic_person_black_24dp"
+        android:icon="@android:drawable/ic_menu_info_details"
         android:id="@+id/personMenu"
         android:orderInCategory="100"
-        android:title="Person"
+        android:title="Setting"
         app:showAsAction="always" />
 </menu>
