@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inside_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/black_them"
+      >
+
+
+        <FrameLayout
+            android:id="@+id/root_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+         >
+
+
+
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleTextColor="@color/lightGray"
+         >
+
+            <ImageView
+                android:id="@+id/three60"
+                android:layout_width="70sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:background="@android:color/transparent"
+                android:gravity="right"
+                android:src="@drawable/threesixty"
+                android:text="text"
+                android:tint="@color/colorAccent"
+                android:visibility="gone" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/videoSizeChangerText"
+            android:layout_width="140dp"
+            android:layout_height="90dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@drawable/bgt"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+
+            <TextView
+                android:id="@+id/sizeChangerText"
+                android:layout_width="wrap_content"
+                android:layout_height="70sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="1"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/seekTouchLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/seekupper"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="0dp"
+                android:tint="@color/colorAccent"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/seekTouch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/seekTouchDurationTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_toRightOf="@id/seekTouch"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <SeekBar
+                android:id="@+id/seekForRev"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:theme="@style/SeekTheme"
+                android:thumb="@android:color/transparent"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/volseekTouchLayout"
+            android:layout_width="140dp"
+            android:layout_height="90dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bgt"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/volupper"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/sp1"
+                android:tint="#fff"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/volseekTouch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="1"
+                android:textColor="@color/White"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <SeekBar
+                android:id="@+id/volumeSeek"
+                android:layout_width="0sp"
+                android:layout_height="0sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:theme="@style/SeekTheme"
+                android:thumb="@android:color/transparent"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/brightLayout"
+            android:layout_width="140dp"
+            android:layout_height="90dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bgt"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+
+            <ImageView
+                android:id="@+id/brightupper"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/br1"
+                android:tint="#fff"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/brightseekTouch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="1"
+                android:textColor="@color/White"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <SeekBar
+                android:id="@+id/brightseek"
+                android:layout_width="0sp"
+                android:layout_height="0sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:theme="@style/SeekTheme"
+                android:thumb="@android:color/transparent"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relcon1"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="50sp"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/locker"
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/circleoutline"
+                    android:tint="@color/colorAccent"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_lock_outline_black_24dp"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <ImageButton
+                    android:id="@+id/n_share"
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/locker"
+                    android:background="@drawable/circleoutline"
+                    android:tint="@color/colorAccent"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_share_white_24dp"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <ImageButton
+                    android:id="@+id/n_open_list"
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/n_share"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/circleoutline"
+                    android:tint="@color/colorAccent"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_home_white_24dp"
+                    tools:ignore="VectorDrawableCompat" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relcon2"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/controller2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/orien"
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/filled_circle_edges_img_bg"
+                    android:tint="@color/colorAccent"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_move_to_inbox_black_24dp"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <ImageButton
+                    android:id="@+id/n_floating"
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/orien"
+                    android:background="@drawable/filled_circle_edges_img_bg"
+                    android:tint="@color/colorAccent"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_file_download_black_24dp"
+                    tools:ignore="VectorDrawableCompat" />
+
+
+                <ImageButton
+                    android:id="@+id/n_vol"
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/n_floating"
+                    android:background="@drawable/filled_circle_edges_img_bg"
+                    android:tint="@color/colorAccent"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_favorite_black_24dp"
+                    tools:ignore="VectorDrawableCompat" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/controller"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bgt"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:ignore="NotSibling">
+
+            <!--<SeekBar-->
+            <!--android:id="@+id/seekBar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:theme="@style/SeekTheme" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/running"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="00:00"
+                    android:textColor="#FFF" />
+
+
+                <TextView
+                    android:id="@+id/ablumVideo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="Album"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/White"
+                    android:visibility="gone"
+
+                    />
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="6"
+                    android:theme="@style/SeekTheme" />
+
+                <TextView
+                    android:id="@+id/duration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="03:00"
+                    android:textColor="#FFF" />
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/lin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:weightSum="5"
+                tools:ignore="NotSibling">
+
+                <ImageButton
+                    android:id="@+id/ratio"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_refresh_black_24dp"
+                    android:tint="@color/White"
+                    tools:ignore="VectorDrawableCompat" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:id="@+id/prev"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:focusable="true"
+                        android:padding="0dp"
+                        android:tint="@color/White"
+                        app:srcCompat="@android:drawable/ic_media_previous"
+                        tools:ignore="MissingPrefix,VectorDrawableCompat" />
+
+                    <ImageButton
+                        android:id="@+id/play_pause"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorAccent"
+                        android:drawSelectorOnTop="true"
+                        android:focusable="true"
+                        android:padding="0dp"
+                        android:tint="@color/Red"
+                        app:srcCompat="@android:drawable/ic_media_play"
+                        tools:ignore="MissingPrefix,VectorDrawableCompat" />
+
+                    <ImageButton
+                        android:id="@+id/next"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="@android:color/transparent"
+                        android:focusable="true"
+                        android:padding="0dp"
+                        android:tint="@color/White"
+                        app:srcCompat="@android:drawable/ic_media_next"
+                        tools:ignore="MissingPrefix,VectorDrawableCompat" />
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/videoSizeChanger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|end"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_shuffle_black_24dp"
+                    android:tint="@color/White"
+                    android:visibility="visible"
+                    tools:ignore="VectorDrawableCompat" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

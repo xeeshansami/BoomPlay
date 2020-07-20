@@ -17,7 +17,9 @@
         <item name="android:textSize">10sp</item>
     </style>
 
-
+    <style name="SeekTheme" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/facebookColor</item>
+    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

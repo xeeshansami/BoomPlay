@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.boomplay.Activities.HDVPVideoDetailActivityFliper
 import com.example.boomplay.Dashboard
 import com.example.boomplay.R
 import com.paxees.wastatussaver.Models.StatusData
@@ -44,6 +45,10 @@ class RecyclerViewAdapter3(listImg:ArrayList<Int>?, items: ArrayList<String>?, v
         var name = listString?.get(position)
         Glide.with(context).load(img).into(holder?.thumnails_img)
         holder.libImgTxt.text = name
+        holder?.itemView.setOnClickListener(View.OnClickListener {
+            var Intent = Intent(context, HDVPVideoDetailActivityFliper::class.java)
+            context.startActivity(Intent)
+        })
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
