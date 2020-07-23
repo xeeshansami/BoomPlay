@@ -1,42 +1,32 @@
-package com.paxees.wastatussaver.fragments
-
+package com.example.boomplay
+import com.example.boomplay.R
 import android.os.Bundle
 import android.view.*
 import android.widget.FrameLayout
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
-import com.example.boomplay.DownloadActivity
-import com.example.boomplay.PlayActivity
-import com.example.boomplay.R
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.youtube.player.YouTubeBaseActivity
 import com.paxees.wastatussaver.Adapter.ViewPagerAdapter
-import kotlinx.android.synthetic.main.fragment_download.*
+import com.paxees.wastatussaver.fragments.*
+import kotlinx.android.synthetic.main.activity_sign_screens.*
+import kotlinx.android.synthetic.main.app_bar_main.view_pager
 
 
-class DownloadFragment : Fragment() {
-    var downloadVideosFragment: DownloadVideoFragment? = null
-    var downloadMusicFragment: DownloadMusicFragment? = null
+class DownloadActivity : AppCompatActivity() {
     var prevMenuItem: MenuItem? = null
+    var downloadFragment: DownloadFragment? = null
+    var settingFragment: SettingFragment? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_download, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        setContentView(R.layout.activity_download)
         init()
         viewPager()
     }
 
     fun viewPager() {
-        viewPagerFragment.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        view_pager.addOnPageChangeListener(object : OnPageChangeListener {
             override fun onPageScrolled(
                 position: Int,
                 positionOffset: Float,
@@ -54,30 +44,33 @@ class DownloadFragment : Fragment() {
 
             override fun onPageScrollStateChanged(state: Int) {}
         })
-        setupViewPager(viewPagerFragment)
+        setupViewPager(view_pager)
     }
 
     fun init() {
         bottomNavTabs.setOnNavigationItemSelectedListener(
             BottomNavigationView.OnNavigationItemSelectedListener { item ->
                 when (item.itemId) {
-                    R.id.videosMenu -> {
-                        viewPagerFragment.setCurrentItem(0)
+                    R.id.homeMenu -> {
+                        finish()
                     }
-                    R.id.musicMenu -> {viewPagerFragment.setCurrentItem(1)}
+                    R.id.downloadMenu -> view_pager.setCurrentItem(0)
+                    R.id.personMenu -> view_pager.setCurrentItem(1)
                 }
                 false
             })
+//        adjustGravity(bottomNavTabs)
+//        adjustWidth(bottomNavTabs)
     }
 
 
     private fun setupViewPager(viewPager: ViewPager) {
-        val adapter = ViewPagerAdapter((activity as DownloadActivity).getSupportFragmentManager())
-        downloadVideosFragment = DownloadVideoFragment()
-        downloadMusicFragment = DownloadMusicFragment()
-        adapter.addFrag(downloadVideosFragment!!)
-        adapter.addFrag(downloadMusicFragment!!)
-        viewPagerFragment.adapter = adapter
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        downloadFragment = DownloadFragment()
+        settingFragment = SettingFragment()
+        adapter.addFrag(downloadFragment!!)
+        adapter.addFrag(settingFragment!!)
+        viewPager.adapter = adapter
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

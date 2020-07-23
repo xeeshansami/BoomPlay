@@ -15,11 +15,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.paxees.wastatussaver.Adapter.ViewPagerAdapter
-import com.paxees.wastatussaver.fragments.DownloadFragment
 import com.paxees.wastatussaver.fragments.LibraryVideos
 import com.paxees.wastatussaver.fragments.MusicFragment
-import com.paxees.wastatussaver.fragments.PlayingNowFragment
-import kotlinx.android.synthetic.main.activity_sign_screens.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.app_bar_main.view_pager
 
@@ -97,7 +94,7 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
                     }
                     R.id.downloadMenu -> {
-                        var Intent = Intent(this, PlayActivity::class.java)
+                        var Intent = Intent(this, DownloadActivity::class.java)
                         startActivity(Intent)
                     }
                     R.id.personMenu -> {

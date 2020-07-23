@@ -13,7 +13,6 @@ import android.database.Cursor;
 import android.graphics.PixelFormat;
 import android.graphics.SurfaceTexture;
 import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -68,7 +67,7 @@ import java.util.List;
 import static android.provider.Settings.ACTION_MANAGE_OVERLAY_PERMISSION;
 import static android.provider.Settings.canDrawOverlays;
 
-public class HDVPVideoDetailActivityFliper extends AppCompatActivity
+public class MediaPlayer extends AppCompatActivity
         {
     public static final String Broadcast_PLAY_NEW_AUDIO = "com.video.android.playerapp.PlayNewAudio";
     boolean serviceBoundVideo = false;
@@ -123,7 +122,7 @@ public class HDVPVideoDetailActivityFliper extends AppCompatActivity
     int checkin = 0;
     public boolean mIsScrolling = true;
     boolean isLock = false;
-    MediaPlayer mMediaPlayer;
+    android.media.MediaPlayer mMediaPlayer;
     private int MAX_VOLUME = 100;
     private HDVPMyResizeSurfaceView textureView;
     android.view.ViewGroup.LayoutParams lp;
@@ -227,7 +226,7 @@ public class HDVPVideoDetailActivityFliper extends AppCompatActivity
 
 
 
-    public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
+    public void onVideoSizeChanged(android.media.MediaPlayer mp, int width, int height) {
         if (this.videoHeight > 0 && this.videoWidth > 0) {
             this.textureView.adjustSize((float) this.relativbAck.getWidth(), (float) this.relativbAck.getHeight(), this.mMediaPlayer.getVideoWidth(), this.mMediaPlayer.getVideoHeight(), HDVPFinalConstant.FinalConstant_FIT_SCREEN);
         }

@@ -61,4 +61,5 @@ dependencies {
         exclude group: 'com.android.support'
         implementation 'com.nabinbhandari.android:permissions:3.7'
     }
+    implementation files('libs\\YouTubeAndroidPlayerApi.jar')
 }
