@@ -2,35 +2,29 @@ package com.example.boomplay
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.*
-import android.widget.FrameLayout
+import android.util.Log
+import android.view.MenuItem
+import android.view.View
 import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager.widget.ViewPager.OnPageChangeListener
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.boomplay.Adapter.VideoAdapter
+import com.example.boomplay.Models.YouTubeVideos
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
-import com.paxees.wastatussaver.Adapter.RecyclerViewAdapter2
 import com.paxees.wastatussaver.Adapter.RecyclerViewAdapter3
-import com.paxees.wastatussaver.Adapter.ViewPagerAdapter
-import com.paxees.wastatussaver.fragments.*
-import kotlinx.android.synthetic.main.activity_member_ship.*
 import kotlinx.android.synthetic.main.activity_playing_now.*
-import kotlinx.android.synthetic.main.activity_playing_now.recyclerView
-import kotlinx.android.synthetic.main.activity_playing_now.toolbar
-import kotlinx.android.synthetic.main.activity_sign_screens.*
-import kotlinx.android.synthetic.main.app_bar_main.view_pager
-import kotlinx.android.synthetic.main.fragment_videos.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class PlayActivity : YouTubeBaseActivity() {
-    val listString= ArrayList<String>()
-    val listSquareString= ArrayList<Int>()
-    val listImg= ArrayList<Int>()
+    val listString = ArrayList<String>()
+    val listSquareString = ArrayList<Int>()
+    val listImg = ArrayList<Int>()
     var youtubeInitializer: YouTubePlayer.OnInitializedListener? = null
+    var youtubeVideos: Vector<YouTubeVideos> = Vector<YouTubeVideos>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_playing_now)
@@ -40,9 +34,23 @@ class PlayActivity : YouTubeBaseActivity() {
             finish()
         })
         videoPlayer()
-        addList()
+//        addList()
         videoView.initialize("AIzaSyCEbOB9gSLk7pwLMUiRxTTKz3Ze6k_QVcY", youtubeInitializer)
-        videoList()
+        addYoutubeVideos()
+    }
+
+    @SuppressLint("WrongConstant")
+    fun addYoutubeVideos() {
+        recyclerView.setHasFixedSize(true)
+        val layoutManager = LinearLayoutManager(this, LinearLayout.HORIZONTAL, false)
+        recyclerView.setLayoutManager(layoutManager)
+        youtubeVideos.add(YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/eWEF1Zrmdow\" frameborder=\"0\" allowfullscreen></iframe>"))
+        youtubeVideos.add(YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/KyJ71G2UxTQ\" frameborder=\"0\" allowfullscreen></iframe>"))
+        youtubeVideos.add(YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/y8Rr39jKFKU\" frameborder=\"0\" allowfullscreen></iframe>"))
+        youtubeVideos.add(YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/8Hg1tqIwIfI\" frameborder=\"0\" allowfullscreen></iframe>"))
+        youtubeVideos.add(YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/uhQ7mh_o_cM\" frameborder=\"0\" allowfullscreen></iframe>"))
+        val videoAdapter = VideoAdapter(youtubeVideos)
+        recyclerView.adapter = videoAdapter
     }
 
     fun videoPlayer() {
@@ -52,23 +60,22 @@ class PlayActivity : YouTubeBaseActivity() {
                 youTubePlayer: YouTubePlayer?,
                 p2: Boolean
             ) {
-                youTubePlayer?.loadPlaylist("ybBncE6wROo")
+                youTubePlayer?.loadVideo("TmRgK-pXH9c")
             }
 
             override fun onInitializationFailure(
                 p0: YouTubePlayer.Provider?,
                 p1: YouTubeInitializationResult?
             ) {
-
+//                Log.i("errorYoutube", p1?)
             }
         }
-        videoPlayBtn.setOnClickListener(View.OnClickListener {
-        })
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return super.onOptionsItemSelected(item)
     }
+
     fun addList() {
         listString.clear()
         listString?.add("Local Music")
@@ -103,6 +110,7 @@ class PlayActivity : YouTubeBaseActivity() {
         listSquareString?.add(R.drawable.poster3)
         listSquareString?.add(R.drawable.poster1)
     }
+
     @SuppressLint("WrongConstant")
     fun videoList() {
         val layoutManager = LinearLayoutManager(this, LinearLayout.HORIZONTAL, false)

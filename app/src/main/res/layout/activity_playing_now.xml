@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
@@ -19,12 +20,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center"
             android:background="@color/colorAccent"
-            android:gravity="center_vertical|center">
-        </androidx.appcompat.widget.Toolbar>
+            android:gravity="center_vertical|center"></androidx.appcompat.widget.Toolbar>
 
 
     </com.google.android.material.appbar.AppBarLayout>
-    <ScrollView
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_2ssp"
@@ -36,48 +37,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:id="@+id/playingNowLayout"
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:id="@+id/videoView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:background="@drawable/half_image"
-                android:orientation="vertical"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/customLayout">
-
-                <!-- Parent FrameLayout 'FL' -->
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="400dp">
-
-                    <ImageView
-                        android:id="@+id/videoPlayBtn"
-                        android:layout_width="@dimen/_60ssp"
-                        android:layout_height="@dimen/_60ssp"
-                        android:layout_gravity="center_vertical|center_horizontal"
-                        android:alpha="0.5"
-                        android:src="@android:drawable/ic_media_play"></ImageView>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <com.google.android.youtube.player.YouTubePlayerView
-                            android:id="@+id/videoView"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                    </LinearLayout>
-
-                </FrameLayout>
-
-            </LinearLayout>
+                android:layout_height="200dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/playingNowLayout"
+                android:layout_below="@+id/videoView"
                 android:layout_margin="@dimen/_2ssp"
                 android:orientation="vertical">
 
@@ -181,9 +149,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_2ssp"
-                    android:orientation="horizontal"
-                    tools:listitem="@layout/adatper_listview_circle"></androidx.recyclerview.widget.RecyclerView>
+                    android:orientation="horizontal"></androidx.recyclerview.widget.RecyclerView>
             </LinearLayout>
         </RelativeLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
